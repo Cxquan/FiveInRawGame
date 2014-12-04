@@ -15,11 +15,16 @@ public:
 	~Organizer();
 
 	void startGame();
-	Piece& receiveInput();
-	bool isPlayAgain();
+
+	void getModeInput(Screener& screener, Chessboard& board);
+	void getPieceInput(Screener& screener, Chessboard& board);
+
+	bool isPlayAgain(Screener& screener, Chessboard& board);
 
 private:
-	bool isValidInput(const char& x, const char& y);
+	int mode;//下棋模式：0人人；1人机；
+	int turn;//当前下棋方；
+	int winer;//胜者
 };
 
 #endif

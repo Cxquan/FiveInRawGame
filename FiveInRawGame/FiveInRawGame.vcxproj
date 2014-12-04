@@ -87,8 +87,13 @@
     <ClInclude Include="Screener.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AIPlayer.cpp" />
     <ClCompile Include="Chessboard.cpp" />
+    <ClCompile Include="Judger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Organizer.cpp" />
+    <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screener.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

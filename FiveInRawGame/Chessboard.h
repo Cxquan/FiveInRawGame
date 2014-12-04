@@ -18,15 +18,14 @@ public:
 	int getType(const int x, const int y);
 
 	//设置在相应位置放置棋子
-	void setPiece(Piece& piece);
+	void setPiece(const Piece& piece);
+
+	bool check(int x, int y);
 
 
 private:
-	//记录每个位置的落子,初始为x=-1;y=-1;type=0;
-	Piece pieceBoard[CHESS_SIZE][CHESS_SIZE];
-
-	//棋盘
-	//int (*symbleBoard)[CHESS_SIZE];//以索引形式记录每个位置应该显示什么符号
+	//记录每个位置的落子,初始为x=-1;y=-1;type=0;symble=*
+	Piece **pieceBoard;
 
 };
 

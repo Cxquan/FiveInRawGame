@@ -3,11 +3,13 @@
 
 class Player {
 public:
-	Player();
+	Player(int type);
 	~Player();
 
+	int getType();
+
 private:
-	char color;//黑方or白方
+	int type;//黑方or白方
 	//记录悔棋数
 	//记录下子数（禁手？）
 

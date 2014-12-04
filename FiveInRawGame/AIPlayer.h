@@ -4,9 +4,12 @@
 
 class AIPlayer {
 public:
-	AIPlayer();
+	AIPlayer(int type);
 	~AIPlayer();
+	int getType();
 
+private:
+	int type;//ºÚ·½or°×·½
 };
 
 #endif

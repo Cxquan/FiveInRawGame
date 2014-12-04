@@ -22,32 +22,45 @@ int initSymble[CHESS_SIZE][CHESS_SIZE] = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 
 Chessboard::Chessboard()
 {
-	//pieceBoard = { 0 };//0表示相应位置无棋子
-	memset(pieceBoard, 0, sizeof(pieceBoard));
-	symbleBoard = initSymble;
+	//初始化棋盘落子
+	pieceBoard = new Piece*[CHESS_SIZE];
+
+	for (int i = 0; i < CHESS_SIZE; i++)
+	{
+		pieceBoard[i] = new Piece[CHESS_SIZE];
+	}
+
+	for (int i = 0; i < CHESS_SIZE; i++)
+	{
+		for (int j = 0; j < CHESS_SIZE; j++)
+		{
+			Piece piece(i, j, 0, initSymble[i][j]);
+			pieceBoard[i][j] = piece;
+		}
+	}
 }
 
-Chessboard::~Chessboard()
+void Chessboard::setPiece(const Piece& piece)
 {
-	delete[] pieceBoard;
-	delete[] symbleBoard;
-}
-
-void Chessboard::setPiece(const int x, const int y, const int type)
-{
-	//check(x, y);
-	pieceBoard[x][y] = type;
-	symbleBoard[x][y] = (type == 2) ? 10 : 11;//设置相应位置的符号位置索引
+	pieceBoard[piece.x][piece.y] = piece;
 }
 
 int Chessboard::getType(const int x, const int y)
 {
-	//check(x, y);
-	return pieceBoard[x][y];
+	return pieceBoard[x][y].type;
 }
 
 int Chessboard::getSymble(const int x, const int y)
 {
-	//check(x, y);
-	return symbleBoard[x][y];
+	return pieceBoard[x][y].symble;
+}
+
+Chessboard::~Chessboard()
+{
+	for (int i = 0; i < CHESS_SIZE; i++)
+	{
+		delete[] pieceBoard[i]; //先撤销指针元素所指向的数组
+	}
+	delete[] pieceBoard;
+
 }

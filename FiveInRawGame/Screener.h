@@ -14,7 +14,7 @@ public:
 	Screener();
 	~Screener();
 
-	void showWelcome(Chessboard& board);
+	void showChoseBoard(Chessboard& board);
 	void showWinerBoard(Chessboard& board, Player& player);
 	void showForbiddenBoard(Chessboard& board, Player& player);
 	void showGamingBoard(Chessboard& board);
