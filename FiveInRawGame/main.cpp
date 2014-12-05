@@ -12,5 +12,4 @@ void main()
 	screener.showBoard(board);*/
 	Organizer org;
 	org.startGame();
-	cout << "...end..." << endl;
 }

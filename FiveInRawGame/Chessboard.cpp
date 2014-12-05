@@ -47,6 +47,10 @@ void Chessboard::setPiece(const Piece& piece)
 
 int Chessboard::getType(const int x, const int y)
 {
+	if (x < 0 || x >= CHESS_SIZE || y < 0 || y >= CHESS_SIZE)
+	{
+		return -1;
+	}
 	return pieceBoard[x][y].type;
 }
 

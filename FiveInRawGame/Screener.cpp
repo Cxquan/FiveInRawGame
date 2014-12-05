@@ -10,14 +10,6 @@ Screener::~Screener()
 {
 }
 
-void Screener::showChoseBoard(Chessboard& board)
-{
-	system("cls");
-	showBoard(board);
-	cout << "双人对战模式(0);人机对战模式(1)" << endl;
-	cout << "请选择游戏模式：";
-}
-
 void Screener::showBoard(Chessboard& board)
 {
 	//显示列坐标
@@ -35,6 +27,50 @@ void Screener::showBoard(Chessboard& board)
 			cout << symble[board.getSymble(i, j)];
 		}
 	}
+	
 	cout << endl;
 	cout << endl;
+}
+
+void Screener::showWinByForbidBoard(Chessboard& board, Player& player)
+{
+	showBoard(board);
+	cout << "！！！黑方将棋子落于禁手点！！！" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~| 本次对战【白方】胜出 |~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	system("pause");
+}
+
+void Screener::showWinerBoard(Chessboard& board, Player& player)
+{
+	system("cls");
+	showBoard(board);
+	string winner = player.getType() == 1 ? "黑方" : "白方";
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~| 本次对战【" << winner << "】胜出 |~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	system("pause");
+}
+
+void Screener::showWinerBoard(Chessboard& board, const int turn)
+{
+	system("cls");
+	showBoard(board);
+	string winner = turn == 1 ? "黑方" : "白方";
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~| 本次对战【" << winner << "】胜出 |~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	system("pause");
+}
+
+void Screener::showDrawBoard(Chessboard& board)
+{
+	system("cls");
+	showBoard(board);
+
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~| 本次对战【不分胜负】 |~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	system("pause");
 }
