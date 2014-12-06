@@ -12,6 +12,10 @@ Screener::~Screener()
 
 void Screener::showBoard(Chessboard& board)
 {
+	system("title=!!!!五子棋对战!!!!");
+	cout << "作者:陈新荃  学号:2014E8018461048  ";
+	cout << "邮箱:chenxinquan14@mails.ucas.ac.cn" << endl;
+
 	//显示列坐标
 	cout << " 0 1 2 3 4 5 6 7 8 9 10 1 2 3 4" << endl;
 	for (int i = 0; i < CHESS_SIZE; i++)
@@ -47,9 +51,9 @@ void Screener::showWinerBoard(Chessboard& board, Player& player)
 	system("cls");
 	showBoard(board);
 	string winner = player.getType() == 1 ? "黑方" : "白方";
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "~~~~~| 本次对战【" << winner << "】胜出 |~~~~~~" << endl;
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	system("pause");
 }
 
@@ -58,9 +62,9 @@ void Screener::showWinerBoard(Chessboard& board, const int turn)
 	system("cls");
 	showBoard(board);
 	string winner = turn == 1 ? "黑方" : "白方";
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "~~~~~| 本次对战【" << winner << "】胜出 |~~~~~~" << endl;
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	system("pause");
 }
 

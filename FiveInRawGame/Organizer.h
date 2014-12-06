@@ -18,7 +18,7 @@ public:
 	void startGame();
 
 	void getModeInput(Screener& screener, Chessboard& board);
-	Piece getPieceInput(Screener& screener, Chessboard& board, Player& player, Judger& judger);
+	Piece getPieceInput(Screener& screener, Chessboard& board, Judger& judger, const Piece& lastPiece);
 
 	bool isPlayAgain(Screener& screener, Chessboard& board);
 
